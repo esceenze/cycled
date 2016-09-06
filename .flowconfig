@@ -1,0 +1,6 @@
+[include]
+<PROJECT_ROOT>/src/
+
+[ignore]
+.*/__tests__/.*
+.*/node_modules/fbjs/.*

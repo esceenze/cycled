@@ -1,0 +1,45 @@
+body
+  -webkit-font-smoothing: antialiased
+  font-weight: 300
+
+.d-inline-block
+  display: inline-block
+
+.d-block
+  display: block
+
+.d-inline
+  display: inline
+
+.text-lg
+  font-size: $font-size-lg
+
+.text-sm
+  font-size: $font-size-sm
+
+.text-lighter
+  font-weight: 300 !important
+
+.bolder,
+.text-bolder
+  font-weight: 400 !important
+
+.margin-auto
+  margin-left: auto
+  margin-right: auto
+
+
+@for $i from 1 through 20
+  $mwidth: $i * 50
+  .mw-#{$mwidth}
+    max-width: 50px * $i
+
+@for $i from 1 through 20
+  $mwidth: $i * 50
+  .w-#{$mwidth}
+    width: 50px * $i
+
+// For react virtualized
+.Grid[role=grid]
+  &:focus
+    outline: none

@@ -1,0 +1,49 @@
+@import ../../styles/_variables.scss
+
+.app
+  position: relative
+  padding-left: $sidebar-width
+  font-weight: 400
+
+  .navbar-wrapper
+    position: relative
+
+    .navbar
+      height: $navbar-height + 1px
+      left: $sidebar-width
+      background: #fff
+      border-bottom: 1px solid $gray-lighter
+
+      .navbar-avatar
+        border-radius: 50%
+        width: 32px
+        height: 32px
+        margin: -16px .5rem -16px 0
+        display: inline-block
+        vertical-align: super
+
+      .nav-link
+        cursor: pointer
+
+      .navbar-nav
+        float: right
+
+  .main-content-container
+    position: relative
+
+
+// loading screen animation
+
+.fade-enter
+  opacity: 0.01
+
+.fade-enter.fade-enter-active
+  opacity: 1
+  transition: opacity 300ms
+
+.fade-leave
+  opacity: 1
+
+.fade-leave.fade-leave-active
+  opacity: 0.01
+  transition: opacity 150ms

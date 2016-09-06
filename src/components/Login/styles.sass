@@ -1,0 +1,32 @@
+@import ../../styles/_variables.scss
+@import ../../styles/_cy-mixins.sass
+
+.login-form
+  position: absolute
+  transform: translateY(-50%)
+  margin-left: -130px
+  left: 50%
+  top: 45%
+  width: 260px
+
+  .login-form-logo
+    display: inline-block
+    width: 175px
+    height: 90px
+    opacity: .25
+    // background: url(../../static/logo-dark-vertical.png) no-repeat center center
+    background-size: contain
+
+  .login-form-content
+    padding: 1rem
+
+    .login-form-error
+      margin-bottom: .75rem
+      margin-top: -.25rem
+      font-size: .9rem
+      padding-left: $input-padding-x
+      color: $brand-danger
+
+    .form-control-danger
+      border-color: $brand-danger
+      color: $brand-danger

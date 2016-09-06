@@ -1,0 +1,53 @@
+=label-size-rounded($padding-y, $padding-x, $font-size, $line-height, $border-radius)
+  padding: $padding-y $padding-x * .8
+  font-size: $font-size
+  line-height: $line-height
+  @include border-radius(99px)
+
+=label-variant($color)
+  color: $color
+  border: 1px solid rgba($color, .5)
+  background: rgba($color, .15)
+
+
+.label-rounded
+  +label-size-rounded($btn-padding-y, $btn-padding-x, 1rem, $line-height, $btn-border-radius)
+  +label-variant($gray)
+  border: 1px solid $gray-lighter
+  color: $gray
+  text-align: center
+  background: $gray-lightest
+  font-weight: bold
+
+.label-rounded-lg
+  @include label-size-rounded($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $line-height-lg, $btn-border-radius-lg)
+
+.label-rounded-sm
+  @include label-size-rounded($btn-padding-y-sm, $btn-padding-x-sm, 1rem, $line-height-sm, $border-radius)
+
+.label-rounded-xs
+  @include label-size-rounded($btn-padding-y-sm * .8, $btn-padding-x-sm * .8, $font-size-sm, $line-height-sm * .8, $btn-border-radius-sm)
+
+.label-rounded-xxs
+  @include label-size-rounded($btn-padding-y-sm * .5, $btn-padding-x-sm * .8, $font-size-sm*.8, $line-height-sm * .5, $btn-border-radius-sm)
+
+.label-rounded-primary
+  +label-variant($brand-primary)
+
+.label-rounded-pink
+  +label-variant($brand-pink)
+
+.label-rounded-green
+  +label-variant($brand-green)
+
+.label-rounded-warning
+  +label-variant($brand-warning)
+
+.label-rounded-danger
+  +label-variant($brand-danger)
+
+.label-rounded-blue
+  +label-variant($brand-blue)
+
+.label-rounded-purple
+  +label-variant($brand-purple)
