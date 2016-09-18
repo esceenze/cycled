@@ -10,15 +10,16 @@ const validateAndSubmit = (values, dispatch) => {
       throw new SubmissionError({ email: 'Please enter correct email' });
     }
     else {
-      dispatch(accountLogin(values));
+      dispatch(accountLogin(values.email, values.password));
       resolve();
     }
   });
 };
 
-function mapStateToProps() {
+function mapStateToProps(state) {
   return {
     validateAndSubmit,
+    isAuthenticated: state.account.isAuthenticated,
   };
 }
 

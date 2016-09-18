@@ -2,7 +2,7 @@
 
 import { connect } from 'react-redux';
 import { accountLogoutAndRedirect } from '../actions/account';
-import { fetchInitialAppData } from '../actions/app';
+// import { fetchInitialAppData } from '../actions/app';
 import App from '../components/App';
 
 function mapStateToProps(state: object, props: object): object {
@@ -19,9 +19,9 @@ const mapDispatchToProps = dispatch => ({
   handleLogout() {
     dispatch(accountLogoutAndRedirect());
   },
-  fetchInitialAppData(userId: number) {
-    dispatch(fetchInitialAppData(userId));
-  },
+  // fetchInitialAppData(userId: number) {
+  //   dispatch(fetchInitialAppData(userId));
+  // },
 });
 
 

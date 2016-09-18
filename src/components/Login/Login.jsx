@@ -1,15 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import {reduxForm, Field} from 'redux-form';
 import cx from 'classnames';
+import { push } from 'react-router-redux';
 import './styles.sass';
-
-/*
-  <div className="form-group has-danger">
-  <label className="col-form-label" for="inputDanger1">Input with danger</label>
-  <input type="text" class="form-control form-control-danger" id="inputDanger1">
-  <div className="form-control-feedback">Sorry, that username's taken. Try another?</div>
-  <small className="form-text text-muted">Example help text that remains unchanged.</small>
-</div>; */
 
 const renderInput = ({input, inputClass = 'form-control', containerClass = '', type, placeholder, meta: {touched, error, invalid}}) =>
   <div className={containerClass}>
@@ -41,10 +34,25 @@ class Login extends Component {
     validateAndSubmit: PropTypes.func.isRequired,
     error: PropTypes.string,
     submitting: PropTypes.bool.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
   }
 
-  static contextTypes = {
-    router: PropTypes.object,
+  componentWillMount() {
+    this.checkAuth(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.checkAuth(nextProps);
+  }
+
+  checkAuth({isAuthenticated, nextPath, dispatch}) {
+    if (isAuthenticated) {
+      if (nextPath && 'next' in nextPath) {
+        dispatch(push(nextPath.next));
+        return null;
+      }
+      dispatch(push('/'));
+    }
   }
 
   render() {

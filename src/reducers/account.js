@@ -10,7 +10,8 @@ const initialState = {
   userId: '',
   token: '',
   isAuthenticated: false,
-  username: '',
+  firstName: '',
+  lastName: '',
   email: '',
 };
 

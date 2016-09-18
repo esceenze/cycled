@@ -7,7 +7,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import configureStore from './store/configureStore';
 import cookies from 'cookies-js';
 import {Provider} from 'react-redux';
-// import {accountLoginSuccess} from 'actions/account';
+import {accountLoginSuccess} from 'actions/account';
 import { AppContainer } from 'react-hot-loader';
 
 const store = configureStore();
@@ -17,7 +17,7 @@ const mountNode = document.getElementById('root');
 const token = cookies.get('token');
 const userId = cookies.get('userId');
 if (token && userId) {
-  // store.dispatch(accountLoginSuccess(token, userId));
+  store.dispatch(accountLoginSuccess(token, userId));
 }
 
 const renderApp = () => {
