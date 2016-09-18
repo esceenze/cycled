@@ -42,12 +42,12 @@ class Login extends Component {
               <Field
                 name="username"
                 component={renderInput}
-                type="text"/>
+                type="text" />
               <Field
                 name="password"
                 component={renderInput}
-                type="password"/>
-            <button type="submit" disabled={submitting} className="btn btn-primary-outline btn-block">Sign in</button>
+                type="password" />
+              <button type="submit" disabled={submitting} className="btn btn-primary btn-block">Sign in, 1</button>
           </div>
         </form>
       </div>

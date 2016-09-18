@@ -1,14 +1,14 @@
 // @flow
 
-import React, {PropTypes} from 'react';
-import {render} from 'react-dom';
-import {Router, browserHistory} from 'react-router';
+import React from 'react';
+import {render, unmountComponentAtNode} from 'react-dom';
+import {browserHistory, Router} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
-import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 import cookies from 'cookies-js';
+import {Provider} from 'react-redux';
 // import {accountLoginSuccess} from 'actions/account';
-import routes from './routes';
+import { AppContainer } from 'react-hot-loader';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -20,20 +20,57 @@ if (token && userId) {
   // store.dispatch(accountLoginSuccess(token, userId));
 }
 
-const Root = ({store, history}) =>
-  <Provider store={store} key="provider">
-    <Router history={history}>
-      {routes}
-    </Router>
-  </Provider>;
+const renderApp = () => {
+  const routes = require('./routes').default;
 
-Root.propTypes = {
-  store: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
+  render(
+    <AppContainer>
+      <Provider store={store}>
+        <Router history={history} routes={routes} />
+      </Provider>
+    </AppContainer>,
+    mountNode
+  );
 };
 
+// Enable hot reload by react-hot-loader
+if (module.hot) {
+  const reRenderApp = () => {
+    try {
+      renderApp();
+    }
+    catch (error) {
+      render(<span>{error}</span>, mountNode);
+    }
+  };
 
-render(
-  <Root store={store} history={history}/>,
-  mountNode
-);
+  module.hot.accept('./routes', () => {
+    // Prevent the hot reloading error from react-router
+    unmountComponentAtNode(mountNode);
+    reRenderApp();
+  });
+}
+
+renderApp();
+
+// render(
+//   <AppContainer>
+//     <Provider store={store} key="provider">
+//       <Router history={history} routes={routes} />
+//     </Provider>
+//     <Root store={store} history={history} routes={routes} />
+//   </AppContainer>,
+//   mountNode
+// );
+//
+// if (module.hot) {
+//   module.hot.accept('./components/Root', () => {
+//     const RootComponent = require('./components/Root').default;
+//     render(
+//       <AppContainer>
+//         <RootComponent store={store} history={history} routes={routes} />
+//       </AppContainer>,
+//       mountNode
+//     );
+//   });
+// }

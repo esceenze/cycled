@@ -1,14 +1,13 @@
 /*eslint-disable */
-
 const path = require('path');
 const webpack = require('webpack');
-// const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3001', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://0.0.0.0:3001',
+    'webpack/hot/only-dev-server',
     path.join(__dirname, 'src', 'index'),
   ],
   output: {
@@ -33,7 +32,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
-        loaders: ['react-hot', 'babel']
+        loaders: ['babel']
       },
       {
         test: /\.(jpe?g|png|gif|svg|eot|ttf|otf|woff|woff2)$/i,
@@ -42,19 +41,15 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
-        // loaders: ["style", "css", "sass", "postcss-loader"]
       },
       {
         test: /\.sass$/,
         loaders: ["style", "css", "sass-loader?indentedSyntax"]
-        // loaders: ["style", "css", "sass", "postcss-loader"]
       },
       {
         test: /\.css$/,
         loaders: ["style", "css"]
-        // loaders: ["style", "css", "postcss-loader"]
       }
     ]
   },
-  // postcss: [autoprefixer({browsers: ['last 2 versions']})]
 };
