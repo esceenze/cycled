@@ -94,10 +94,6 @@
 
 @include text-emphasis-variant('.text-danger', $brand-danger);
 
-@include text-emphasis-variant('.text-purple', $brand-purple);
-
-@include text-emphasis-variant('.text-pink', $brand-pink);
-
 @include text-emphasis-variant('.text-default', $body-color);
 
 @include text-emphasis-variant('.text-inactive', $gray);

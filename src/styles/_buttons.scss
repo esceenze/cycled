@@ -67,18 +67,6 @@ fieldset[disabled] a.btn {
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
-.btn-green {
-  @include button-variant(#fff, $brand-green, $brand-green);
-}
-.btn-blue {
-  @include button-variant(#fff, $brand-blue, $brand-blue);
-}
-.btn-purple {
-  @include button-variant(#fff, $brand-purple, $brand-purple);
-}
-.btn-lightblue {
-  @include button-variant(#fff, $brand-lightblue, $brand-lightblue);
-}
 .btn-secondary {
   @include button-lighten-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 }
@@ -117,19 +105,6 @@ fieldset[disabled] a.btn {
 .btn-danger-outline {
   @include button-outline-variant($btn-danger-bg);
 }
-.btn-purple-outline {
-  @include button-outline-variant($brand-purple);
-}
-.btn-blue-outline {
-  @include button-outline-variant($brand-blue);
-}
-.btn-lightblue-outline {
-  @include button-outline-variant(darken($brand-lightblue, 7%));
-}
-.btn-green-outline {
-  @include button-outline-variant(darken($brand-green, 10%));
-}
-
 
 //
 // Link buttons
@@ -180,7 +155,7 @@ fieldset[disabled] a.btn {
 }
 .btn-sm {
   // line-height: ensure proper height of button next to small input
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, 1rem, $line-height-sm, $border-radius);
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, 1, $line-height-sm, $border-radius);
 }
 .btn-xs {
   // line-height: ensure proper height of button next to small input
@@ -188,7 +163,7 @@ fieldset[disabled] a.btn {
 }
 .btn-xxs {
   // line-height: ensure proper height of button next to small input
-  @include button-size($btn-padding-y-sm * .5, $btn-padding-x-sm * .8, $font-size-sm*.8, $line-height-sm * .5, $btn-border-radius-sm);
+  @include button-size($btn-padding-y-sm * .5, $btn-padding-x-sm * .8, $font-size-sm * .8, $line-height-sm * .5, $btn-border-radius-sm);
 }
 
 

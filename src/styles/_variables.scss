@@ -26,28 +26,19 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
-$gray-darkest:              #33353C !default;
-$gray-dark:                 #3D4049 !default;
-$gray:                      #9FA1A7 !default;
-$gray-light:                #CACAD1 !default;
+$gray-darkest:              #122133 !default;
+$gray-dark:                 #364353 !default;
+$gray:                      #BBBBBB !default;
+$gray-light:                #E8F4F6 !default;
 $gray-lighter:              #EBEBED !default;
-$gray-lighterer:            #F9F9F9 !default;
-$gray-lightest:             #FBFBFB !default;
-$gray-lighblue:             #FBFBFB !default;
+$gray-lightest:             #F3F3F3 !default;
 
 
-$brand-primary:             #738EE8 !default;
-$brand-success:             #7AD995 !default;
-$brand-info:                #E4D345 !default;
-$brand-warning:             #F7B65D !default;
-$brand-danger:              #FB726B !default;
-
-// $brand-purple:              #B89BCC !default;
-$brand-purple:              #B89BCC !default;
-$brand-green:               #B9DE54 !default;
-$brand-blue:                #7075DB !default;
-$brand-lightblue:           #5CBCDF !default;
-$brand-pink:                #F0848A !default;
+$brand-primary:             #3F8BB8 !default;
+$brand-success:             #A0D477 !default;
+$brand-info:                #6FD1E9 !default;
+$brand-warning:             #F9C037 !default;
+$brand-danger:              #FF6952 !default;
 
 
 // Options
@@ -124,8 +115,8 @@ $border-width:               1px !default;
 //
 // Settings for the `<body>` element.
 
-$body-bg:                    #E6E6E8 !default;
-$body-color:                 #000 !default;
+$body-bg:                    #fff !default;
+$body-color:                 $gray-dark !default;
 
 
 // Links
@@ -178,55 +169,55 @@ $sidebar-width:              180px;
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:               12 !default;
-$grid-gutter-width:          1.875rem !default; // 30px
+$grid-gutter-width:          1.5rem !default; // 30px
 
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:     "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
-$font-size-root:             15px !default;
+$font-size-root:             18px !default;
 
-$font-size-base:             1rem !default;
-$font-size-lg:               1.15rem !default;
-$font-size-sm:               .9rem !default;
-$font-size-xs:               .75rem !default;
+$font-size-base:             1rem !default; //18px
+$font-size-lg:               1.16rem !default; // 21px
+$font-size-sm:               .83rem !default; // 15px
+$font-size-xs:               .72rem !default; // 13px
 
-$font-size-h1:               2.5rem !default;
-$font-size-h2:               2rem !default;
-$font-size-h3:               1.75rem !default;
-$font-size-h4:               1.5rem !default;
-$font-size-h5:               1.25rem !default;
-$font-size-h6:               1.1rem !default;
+$font-size-h1:               3.39rem !default; // 61
+$font-size-h2:               2.22rem !default; // 40px
+$font-size-h3:               1.5rem !default; // 21px
+$font-size-h4:               $font-size-lg !default;
+$font-size-h5:               $font-size-base !default;
+$font-size-h6:               $font-size-sm !default;
 
-$display1-size:               6rem !default;
-$display2-size:               5.5rem !default;
-$display3-size:               4.5rem !default;
-$display4-size:               3.5rem !default;
+$display4-size:               $font-size-h1 !default;
+$display3-size:               $display4-size * 1.5 !default;
+$display2-size:               $display3-size * 1.5  !default;
+$display1-size:               $display2-size * 1.5  !default;
 
 $display1-weight:             300 !default;
 $display2-weight:             300 !default;
 $display3-weight:             300 !default;
 $display4-weight:             300 !default;
 
-$line-height:                1.5 !default;
+$line-height:                1.4 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
 $headings-font-family:       inherit !default;
 $headings-font-weight:       300 !default;
 $headings-line-height:       1.1 !default;
-$headings-color:             inherit !default;
+$headings-color:             $gray-darkest !default;
 
 $lead-font-size:             1.25rem !default;
 $lead-font-weight:           300 !default;
 
-$text-muted:                  darken($gray-light, 5%) !default;
+$text-muted:                  $gray !default;
 
 $abbr-border-color:           $gray-light !default;
 
@@ -251,7 +242,7 @@ $list-inline-padding:         5px !default;
 $line-height-lg:         (4 / 3) !default;
 $line-height-sm:         1.5 !default;
 
-$border-radius:          .3rem !default;
+$border-radius:          .33rem !default;
 $border-radius-lg:       .5rem !default;
 $border-radius-sm:       .15rem !default;
 
@@ -270,7 +261,7 @@ $table-cell-padding:            .75rem !default;
 $table-sm-cell-padding:         .3rem !default;
 
 $table-bg:                      transparent !default;
-$table-bg-accent:               $gray-lighterer !default;
+$table-bg-accent:               $gray-lighter !default;
 $table-bg-hover:                #f5f5f5 !default;
 $table-bg-active:               $table-bg-hover !default;
 
@@ -282,9 +273,9 @@ $table-border-color:            $gray-lighter !default;
 //
 // For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-padding-x:                  1rem !default;
+$btn-padding-x:                  1.5rem !default;
 $btn-padding-y:                  .5rem !default;
-$btn-font-weight:                300 !default;
+$btn-font-weight:                bold !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -312,16 +303,16 @@ $btn-danger-border:              $btn-danger-bg !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
-$btn-padding-x-sm:               .75rem !default;
+$btn-padding-x-sm:               1rem !default;
 $btn-padding-y-sm:               .25rem !default;
 
-$btn-padding-x-lg:               1.25rem !default;
+$btn-padding-x-lg:               1.75rem !default;
 $btn-padding-y-lg:               .75rem !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:              $border-radius !default;
-$btn-border-radius-lg:           $border-radius-lg !default;
-$btn-border-radius-sm:           $border-radius-sm !default;
+$btn-border-radius:              99rem !default;
+$btn-border-radius-lg:           99rem !default;
+$btn-border-radius-sm:           99rem !default;
 
 
 // Forms
@@ -374,13 +365,13 @@ $form-icon-danger: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My
 // Dropdown menu container and contents.
 
 $dropdown-bg:                    #fff !default;
-$dropdown-border-color:          rgba(0,0,0,.15) !default;
+$dropdown-border-color:          $gray-light !default;
 $dropdown-border-width:          $border-width !default;
-$dropdown-divider-bg:            #e5e5e5 !default;
+$dropdown-divider-bg:            $gray-light !default;
 
 $dropdown-link-color:            $gray-dark !default;
 $dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
-$dropdown-link-hover-bg:         #f5f5f5 !default;
+$dropdown-link-hover-bg:         $gray-lighter !default;
 
 $dropdown-link-active-color:     $component-active-color !default;
 $dropdown-link-active-bg:        $component-active-bg !default;
@@ -503,21 +494,21 @@ $jumbotron-bg:                   $gray-lighter !default;
 //
 // Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             #3c763d !default;
-$state-success-bg:               #dff0d8 !default;
-$state-success-border:           darken($state-success-bg, 5%) !default;
+$state-success-text:             $brand-success !default;
+$state-success-bg:               #fff !default;
+$state-success-border:           $brand-success  !default;
 
-$state-info-text:                #31708f !default;
-$state-info-bg:                  #d9edf7 !default;
-$state-info-border:              darken($state-info-bg, 7%) !default;
+$state-info-text:                $brand-info !default;
+$state-info-bg:                  #fff !default;
+$state-info-border:              $brand-info !default;
 
-$state-warning-text:             #8a6d3b !default;
-$state-warning-bg:               #fcf8e3 !default;
-$state-warning-border:           darken($state-warning-bg, 5%) !default;
+$state-warning-text:             $brand-warning !default;
+$state-warning-bg:               #fff !default;
+$state-warning-border:           $brand-warning !default;
 
-$state-danger-text:              #a94442 !default;
-$state-danger-bg:                #f2dede !default;
-$state-danger-border:            darken($state-danger-bg, 5%) !default;
+$state-danger-text:              $brand-danger !default;
+$state-danger-bg:                #fff !default;
+$state-danger-border:            $brand-danger !default;
 
 
 // Cards
@@ -600,7 +591,7 @@ $modal-sm:                    300px !default;
 // Define alert colors, border radius, and padding.
 
 $alert-padding:               .5rem .75rem !default;
-$alert-border-radius:         $border-radius !default;
+$alert-border-radius:         $border-radius-sm !default;
 $alert-link-font-weight:      bold !default;
 $alert-border-width:          $border-width !default;
 

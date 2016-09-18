@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import { accountLogin } from 'actions/account';
 import {validateEmail} from 'utils/validate';
+import { SubmissionError } from 'redux-form';
 import Login from 'components/Login';
 
-const handleSubmit = (values, dispatch) => {
-  return new Promise((resolve, reject) => {
+const validateAndSubmit = (values, dispatch) => {
+  return new Promise((resolve) => {
     if (!validateEmail(values.email)) {
-      reject({ email: 'Please check your email' });
+      throw new SubmissionError({ email: 'Please enter correct email' });
     }
-
     else {
       dispatch(accountLogin(values));
       resolve();
@@ -18,7 +18,7 @@ const handleSubmit = (values, dispatch) => {
 
 function mapStateToProps() {
   return {
-    validateAndSubmit: handleSubmit,
+    validateAndSubmit,
   };
 }
 
