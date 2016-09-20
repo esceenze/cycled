@@ -1,0 +1,14 @@
+[
+  {
+    "id": "login_submit_btn",
+    "defaultMessage": "Let's start rockin'"
+  },
+  {
+    "id": "password",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "your_email",
+    "defaultMessage": "Your@email.com"
+  }
+]

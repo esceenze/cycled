@@ -4,12 +4,16 @@ import React from 'react';
 import {render, unmountComponentAtNode} from 'react-dom';
 import {browserHistory, Router} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
-import configureStore from './store/configureStore';
 import cookies from 'cookies-js';
 import {Provider} from 'react-redux';
-import {accountLoginSuccess} from 'actions/account';
 import { AppContainer } from 'react-hot-loader';
+import {IntlProvider, addLocaleData} from 'react-intl';
+import ru from 'react-intl/locale-data/ru';
 
+addLocaleData([...ru]);
+import messages from './translations/ru';
+import {accountLoginSuccess} from 'actions/account';
+import configureStore from './store/configureStore';
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 const mountNode = document.getElementById('root');
@@ -26,7 +30,9 @@ const renderApp = () => {
   render(
     <AppContainer>
       <Provider store={store}>
-        <Router history={history} routes={routes} />
+        <IntlProvider locale="ru" messages={messages}>
+          <Router history={history} routes={routes} />
+        </IntlProvider>
       </Provider>
     </AppContainer>,
     mountNode

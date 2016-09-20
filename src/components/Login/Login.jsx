@@ -1,35 +1,31 @@
 import React, { PropTypes, Component } from 'react';
 import {reduxForm, Field} from 'redux-form';
+import { intlShape, injectIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
 import { push } from 'react-router-redux';
+
+import renderInput from '../Input';
 import './styles.sass';
 
-const renderInput = ({input, inputClass = 'form-control', containerClass = '', type, placeholder, meta: {touched, error, invalid}}) =>
-  <div className={containerClass}>
-    <input {...input}
-      className={cx(inputClass, {
-        'form-control-danger': invalid,
-      })}
-      type={type}
-      placeholder={placeholder}
-      />
-    {touched &&
-     error &&
-     <small className="text-danger text-xs-left p-l-2">{error}</small>}
-  </div>;
-
-renderInput.propTypes = {
-  input: PropTypes.any.isRequired,
-  inputClass: PropTypes.string.isRequired,
-  containerClass: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  meta: PropTypes.object.isRequired,
-};
+const messages = defineMessages({
+  login_submit_btn: {
+    id: 'login_submit_btn',
+    defaultMessage: 'Let\'s start rockin\'',
+  },
+  password: {
+    id: 'password',
+    defaultMessage: 'Password',
+  },
+  your_email: {
+    id: 'your_email',
+    defaultMessage: 'Your@email.com',
+  },
+});
 
 class Login extends Component {
 
   static propTypes = {
+    intl: intlShape.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     validateAndSubmit: PropTypes.func.isRequired,
     error: PropTypes.string,
@@ -56,7 +52,7 @@ class Login extends Component {
   }
 
   render() {
-    const {error, handleSubmit, submitting, validateAndSubmit} = this.props;
+    const {error, handleSubmit, submitting, validateAndSubmit, intl: {formatMessage}} = this.props;
     return (
       <div className="login-page">
         <form className="login-form" onSubmit={handleSubmit(validateAndSubmit)}>
@@ -73,17 +69,17 @@ class Login extends Component {
                 component={renderInput}
                 inputClass="form-control form-control-rounded form-control-lg form-control-white"
                 containerClass="m-b-dot5"
-                placeholder="Your@email.com"
+                placeholder={formatMessage(messages.your_email)}
                 type="text" />
               <Field
                 name="password"
                 component={renderInput}
                 inputClass="form-control form-control-rounded form-control-lg form-control-white"
                 containerClass="m-b-1"
-                placeholder="Password"
+                placeholder={formatMessage(messages.password)}
                 type="password" />
               <div className="text-xs-center">
-                <button type="submit" disabled={submitting} className="btn btn-success">Let's start rockin'</button>
+                <button type="submit" disabled={submitting} className="btn btn-success">{formatMessage(messages.login_submit_btn)}</button>
               </div>
           </div>
         </form>
@@ -96,4 +92,4 @@ const LoginForm = reduxForm({
   form: 'login',
 })(Login);
 
-export default LoginForm;
+export default injectIntl(LoginForm);
