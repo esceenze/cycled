@@ -9,7 +9,8 @@
     "lint": "node_modules/.bin/eslint src/** --ext .js,.jsx",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test:watch": "jest --watch",
-    "test": "jest"
+    "test": "jest",
+    "start": "webpack -p --config webpack.config.prod.js && node server"
   },
   "author": "Slava Kovalenko",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "css-loader": "^0.23.0",
     "eslint": "^2.12.0",
     "eslint-plugin-react": "^5.1.1",
+    "express": "^4.14.0",
     "file-loader": "^0.8.4",
     "glob": "^7.0.6",
     "history": "^2.1.1",
