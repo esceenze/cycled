@@ -6,7 +6,7 @@ var object = require('lodash/fp/object');
 
 var availableTranslations = ['ru'];
 
-var fileHeader = "module.exports = ";
+var fileHeader = "/*eslint-disable*/\nmodule.exports = ";
 
 glob("strings/**/*.json", function (er, files) {
   var messagesResult = {};

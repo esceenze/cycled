@@ -1,0 +1,19 @@
+machine:
+  node:
+    version: 6.6
+
+dependencies:
+  override:
+    - npm install
+    - npm run translations
+
+test:
+  override:
+    - npm run lint
+    - npm test
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: cycled

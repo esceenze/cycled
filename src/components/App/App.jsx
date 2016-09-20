@@ -35,7 +35,7 @@ export default class App extends Component {
   }
 
   render() {
-    const {isLoading, children, handleLogout, account, location, isBackgroundLoading} = this.props;
+    const {isLoading, children, /* handleLogout, account, location,*/ isBackgroundLoading} = this.props;
     return (
       <div className="app">
         <Loader isLoading={isLoading} isBackgroundLoading={isBackgroundLoading}/>

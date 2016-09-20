@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/webpack-dev-server --content-base public --port 3001 --inline --history-api-fallback --host 0.0.0.0 --hot",
+    "translations": "node generate-translations.js",
     "lint": "node_modules/.bin/eslint src/** --ext .js,.jsx",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test:watch": "jest --watch",

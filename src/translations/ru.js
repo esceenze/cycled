@@ -1,3 +1,4 @@
+/*eslint-disable*/
 module.exports = {
 	"login_submit_btn": "Погнали, епт",
 	"password": "Пароль",
