@@ -4,7 +4,8 @@
     "transform-flow-strip-types",
     "react-hot-loader/babel",
     ["react-intl", {
-          "messagesDir": "./strings"
+          "messagesDir": "./strings",
+          "extractSourceLocation": true
       }]
     ]
 }

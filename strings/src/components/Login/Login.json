@@ -1,14 +1,41 @@
 [
   {
     "id": "login_submit_btn",
-    "defaultMessage": "Let's start rockin'"
+    "defaultMessage": "Let's start rockin'",
+    "file": "src/components/Login/Login.jsx",
+    "start": {
+      "line": 11,
+      "column": 20
+    },
+    "end": {
+      "line": 14,
+      "column": 3
+    }
   },
   {
     "id": "password",
-    "defaultMessage": "Password"
+    "defaultMessage": "Password",
+    "file": "src/components/Login/Login.jsx",
+    "start": {
+      "line": 15,
+      "column": 12
+    },
+    "end": {
+      "line": 18,
+      "column": 3
+    }
   },
   {
     "id": "your_email",
-    "defaultMessage": "Your@email.com"
+    "defaultMessage": "Your@email.com",
+    "file": "src/components/Login/Login.jsx",
+    "start": {
+      "line": 19,
+      "column": 14
+    },
+    "end": {
+      "line": 22,
+      "column": 3
+    }
   }
 ]
