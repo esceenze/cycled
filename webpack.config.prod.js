@@ -19,6 +19,7 @@ module.exports = {
   plugins: [
       new webpack.DefinePlugin({
       'process.env': {
+          'PATH_API': JSON.stringify('http://cycled-srv.herokuapp.com/api/'),
           'NODE_ENV': JSON.stringify('production')
         }
       }),

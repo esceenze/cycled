@@ -63,12 +63,12 @@ export function accountLogout() {
 export const ACCOUNT_FETCH_INFO = 'ACCOUNT_FETCH_INFO';
 export const ACCOUNT_FETCH_INFO_SUCCESS = 'ACCOUNT_FETCH_INFO_SUCCESS';
 export const ACCOUNT_FETCH_INFO_FAILURE = 'ACCOUNT_FETCH_INFO_FAILURE';
-export function accountFetchInfo(userId) {
+export function accountFetchInfo() {
   return {
     type: ACCOUNT_FETCH_INFO,
 
     payload: {
-      url: API.ACCOUNT_INFO + '/' + userId,
+      url: API.ACCOUNT_INFO,
       request: {
         method: 'GET',
         headers: {

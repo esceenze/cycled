@@ -23,7 +23,8 @@ module.exports = {
   plugins: [
       new webpack.DefinePlugin({
           'process.env': {
-              'PATH_API': JSON.stringify('http://rti-gradebook.dev.architech.nyc:3010/api/')
+              'PATH_API': JSON.stringify('http://79.136.169.62:7000/api/'),
+              'NODE_ENV': JSON.stringify('development')
           }
       })
   ],
